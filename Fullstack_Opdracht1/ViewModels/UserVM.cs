@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Fullstack_Opdracht1.ViewModels
 {
-    public class User
+    public class UserVM
     {
         [Required, MinLength(3), MaxLength(50)]
         public string name { get; set; }

@@ -24,6 +24,6 @@ app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller}/{action}/{id?}");
+    pattern: "{controller=register}/{action=Index}/{id?}");
 
 app.Run();
