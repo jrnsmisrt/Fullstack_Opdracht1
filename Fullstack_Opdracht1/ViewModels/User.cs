@@ -20,7 +20,7 @@ namespace Fullstack_Opdracht1.ViewModels
         public string email { get; set; }
 
         [Required]
-        [Remote("ValidateCountry", "Validator")]
+        [Remote("ValidateCountry", "Validator", "Sorry, Belgian residents only")]
         public string country { get; set; }
 
         [Required, Range(1000, 9999)]
