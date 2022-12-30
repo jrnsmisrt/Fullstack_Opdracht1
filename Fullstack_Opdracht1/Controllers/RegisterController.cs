@@ -21,7 +21,7 @@ namespace Fullstack_Opdracht1.Controllers
             }
 
 
-            return View("Index", user);
+            return View(user);
         }
     }
 }
