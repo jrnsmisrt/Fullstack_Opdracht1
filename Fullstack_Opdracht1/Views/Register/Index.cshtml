@@ -5,24 +5,55 @@
     Layout = "~/Views/Shared/_ViewsLayout.cshtml";
 }
 
-<h1>Index</h1>
+<h4>Register</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <form asp-controller="Register" asp-action="Register" method="post">
 
-<div>
-    <h4>Register</h4>
-    <form asp-controller="Register" asp-action="Register" method="post">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <label asp-for="name"></label>
-                    <input type="text" asp-for="name" />
-                    <span asp-validation-for="name" class="error"></span>
+                <div class="form-group">
+                    <label asp-for="name" class="control-label">Name</label>
+                    <input type="text" asp-for="name" class="form-control" />
+                    <!--<span asp-validation-for="name" class="text-danger small"></span>-->
                 </div>
-            </div>
+                <div class="form-group">
+                    <label asp-for="firstName" class="control-label">First Name</label>
+                    <input type="text" asp-for="firstName" class="form-control" />
+                    <!--<span asp-validation-for="firstName" class="text-danger small"></span>-->
+                </div>
+                <div class="form-group">
+                    <label asp-for="age" class="control-label">Age</label>
+                    <input type="text" asp-for="age" class="form-control" />
+                    <!--<span asp-validation-for="age" class="text-danger small"></span>-->
+                </div>
+                <div class="form-group">
+                    <label asp-for="email" class="control-label">E-mail Address</label>
+                    <input type="text" asp-for="email" class="form-control" />
+                    <!--<span asp-validation-for="email" class="text-danger small"></span>-->
+                </div>
+                <div class="form-group">
+                    <label asp-for="country" class="control-label">Country</label>
+                    <input type="text" asp-for="country" class="form-control" />
+                    <!--<span asp-validation-for="country" class="text-danger small"></span>-->
+                </div>
+                <div class="form-group">
+                    <label asp-for="zipCode" class="control-label">Zipcode</label>
+                    <input type="text" asp-for="zipCode" class="form-control" />
+                    <!--<span asp-validation-for="zipCode" class="text-danger small"></span>-->
+                </div>
+                <div class="form-group">
+                    <label asp-for="mobilePhoneNumber" class="control-label">Mobile Phonenumber</label>
+                    <input type="text" asp-for="mobilePhoneNumber" class="form-control" />
+                    <!--<span asp-validation-for="mobilePhoneNumber" class="text-danger small"></span>-->
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Register" class="btn btn-primary btn-sm mt-2" />
+                </div>
+                <hr class="mt-2 mb-2" />
+                <div class="form-group">
+                    <div asp-validation-summary="All" class="text-danger small"></div>
+                </div>
+            </form>
         </div>
-    </form>
-
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+    </div>
 </div>

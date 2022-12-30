@@ -14,14 +14,14 @@ namespace Fullstack_Opdracht1.Controllers
         [HttpPost]
         public IActionResult Register(UserVM user)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 ViewData["registrationMessage"] = "Form is invald";
-                return View();
+                return View("Index");
             }
 
 
-            return View(user);
+            return View("Index", user);
         }
     }
 }
