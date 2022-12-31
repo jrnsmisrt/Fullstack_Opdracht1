@@ -2,61 +2,57 @@
 
 @{
     ViewData["Title"] = "User Registration";
-    Layout = "~/Views/Shared/_ViewsLayout.cshtml";
 }
 
-<h4>Register</h4>
+<h4>Register a new user</h4>
 <div class="container">
     <div class="row">
         <div class="col-4">
             <form asp-controller="Register" asp-action="Register" method="post">
-
-                <div class="form-group">
-                    <label asp-for="name" class="control-label">Name</label>
-                    <input type="text" asp-for="name" class="form-control" />
-                    <!--<span asp-validation-for="name" class="text-danger small"></span>-->
+                <div class="form-group mb-2">
+                    <label asp-for="Name" class="control-label">Name</label>
+                    <input type="text" asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
+                <div class="form-group mb-2">
+                    <label asp-for="FirstName" class="control-label">First Name</label>
+                    <input type="text" asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger small"></span>
+                </div>
+                <div class="form-group mb-2">
+                    <label asp-for="Age" class="control-label">Age</label>
+                    <input type="text" asp-for="Age" class="form-control" />
+                    <span asp-validation-for="Age" class="text-danger small"></span>
+                </div>
+                <div class="form-group mb-2">
+                    <label asp-for="Email" class="control-label">E-mail Address</label>
+                    <input type="text" asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+                <div class="form-group mb-2">
+                    <label asp-for="Country" class="control-label">Country</label>
+                    <input type="text" asp-for="Country" class="form-control" />
+                    <span asp-validation-for="Country" class="text-danger small"></span>
+                </div>
+                <div class="form-group mb-2">
+                    <label asp-for="ZipCode" class="control-label">Zipcode</label>
+                    <input type="text" asp-for="ZipCode" class="form-control" />
+                    <span asp-validation-for="ZipCode" class="text-danger small"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="firstName" class="control-label">First Name</label>
-                    <input type="text" asp-for="firstName" class="form-control" />
-                    <!--<span asp-validation-for="firstName" class="text-danger small"></span>-->
+                    <label asp-for="MobilePhoneNumber" class="control-label">Mobile Phonenumber</label>
+                    <input type="text" asp-for="MobilePhoneNumber" class="form-control" />
+                    <span asp-validation-for="MobilePhoneNumber" class="text-danger small"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="age" class="control-label">Age</label>
-                    <input type="text" asp-for="age" class="form-control" />
-                    <!--<span asp-validation-for="age" class="text-danger small"></span>-->
-                </div>
-                <div class="form-group">
-                    <label asp-for="email" class="control-label">E-mail Address</label>
-                    <input type="text" asp-for="email" class="form-control" />
-                    <!--<span asp-validation-for="email" class="text-danger small"></span>-->
-                </div>
-                <div class="form-group">
-                    <label asp-for="country" class="control-label">Country</label>
-                    <input type="text" asp-for="country" class="form-control" />
-                    <!--<span asp-validation-for="country" class="text-danger small"></span>-->
-                </div>
-                <div class="form-group">
-                    <label asp-for="zipCode" class="control-label">Zipcode</label>
-                    <input type="text" asp-for="zipCode" class="form-control" />
-                    <!--<span asp-validation-for="zipCode" class="text-danger small"></span>-->
-                </div>
-                <div class="form-group">
-                    <label asp-for="mobilePhoneNumber" class="control-label">Mobile Phonenumber</label>
-                    <input type="text" asp-for="mobilePhoneNumber" class="form-control" />
-                    <!--<span asp-validation-for="mobilePhoneNumber" class="text-danger small"></span>-->
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Register" class="btn btn-primary btn-sm mt-2" />
+                    <input type="submit" class="btn btn-primary btn-sm mt-2" />
+                    <input type="reset" class="btn btn-secondary btn-sm mt-2 ml -2 "value="Reset" />
                 </div>
                 <hr class="mt-2 mb-2" />
                 <div class="form-group">
                     <div asp-validation-summary="All" class="text-danger small"></div>
                 </div>
             </form>
-        </div>
-        <div class="col-4">
-            @ViewBag.userInfo
         </div>
     </div>
 </div>

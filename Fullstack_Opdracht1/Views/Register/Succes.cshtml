@@ -1,0 +1,29 @@
+﻿@model Fullstack_Opdracht1.ViewModels.UserVM
+
+@{
+    ViewData["Title"] = "Succes";
+    Layout = "~/Views/Shared/_ViewsLayout.cshtml";
+}
+
+<!--
+    Het volgende maakt geen deel uit van de opdracht maar vond dit persoonlijk
+    handig om een overzicht te verkrijgen van de "correct" ingevoerde gegevens.
+    Ik kon ook een volledig overzicht geven door gebruik te maken van @Model ipv
+    ViewBag
+-->
+<div class="col-4 ml-5">
+    @if (ViewBag.userInfo is not null)
+    {
+        <h4 class="mb-2">Registered user information</h4>
+        @foreach (var data in ViewBag.userInfo as Dictionary<string, string>)
+        {
+            <div class="row">
+                <div class="col"><p class="fw-bold">@data.Key :</p></div>
+                <div class="col"><p>@data.Value</p> </div>
+            </div>
+        }
+    }
+</div>
+<div>
+    <a asp-action="Index">Back to Registration</a>
+</div>

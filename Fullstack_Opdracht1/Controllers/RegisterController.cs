@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Fullstack_Opdracht1.ViewModels;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Fullstack_Opdracht1.Controllers
 {
@@ -20,13 +21,34 @@ namespace Fullstack_Opdracht1.Controllers
                 ViewData["registrationMessage"] = "Form is invald";
                 return View("Index");
             }
-            StringBuilder userInfo = new StringBuilder();
-            userInfo.Append(user.name).Append(" ").Append(user.firstName)
-                .Append("\n")
-                .Append(user.age);
-            ViewBag.userInfo = userInfo;
 
-            return View("Index", user);
+            /*
+             ViewBag.userInfo maakt geen deel uit van de opdracht, 
+             wordt louter gebruikt om geregistreerde waardes terug te geven.
+             */
+            ViewBag.userInfo = new Dictionary<string, string>
+             {
+                        { "name", user.Name },
+                        { "firstname", user.FirstName },
+                        { "age", user.Age.ToString() },
+                        { "email", user.Email },
+                        { "country", user.Country },
+                        { "zipcode", user.Age.ToString() },
+                        { "mobilephonenumber", user.MobilePhoneNumber }
+             };
+
+            return View("Succes", user);
+        }
+
+        [AcceptVerbs("GET", "POST")]
+        [AllowAnonymous]
+        public IActionResult ValidateCountry(string country)
+        {
+            if (!("belgium".Equals(country.ToLower())))
+            {
+                return Json(false);
+            }
+            return Json(true);
         }
     }
 }
